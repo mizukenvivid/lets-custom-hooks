@@ -21,7 +21,7 @@ export default function useDeviceOrientationPage() {
 
       <div className="flex gap-2">
         <p className="min-w-[200px] rounded-md border-2 border-gray-300 p-2">
-          absolute: {absolute}
+          absolute: {String(absolute)}
           <br />
           alpha: {alpha}
           <br />
