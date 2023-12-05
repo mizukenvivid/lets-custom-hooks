@@ -31,4 +31,8 @@ export const paths = [
     label: "useMovieQuote: ランダムに映画の名言を返す",
     path: "/useMovieQuote",
   },
+  {
+    label: "useGeoLocation: ユーザーの位置情報を取得する",
+    path: "/useGeoLocation",
+  },
 ];
