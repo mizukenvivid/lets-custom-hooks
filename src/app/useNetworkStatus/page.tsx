@@ -21,7 +21,7 @@ export default function UseNetworkStatus() {
 
       <div className="flex gap-2">
         <p className="min-w-[200px] rounded-md border-2 border-gray-300 p-2">
-          オンライン状態: {JSON.stringify(isOnline) ? "online" : "offline"}
+          オンライン状態: {isOnline ? "online" : "offline"}
         </p>
       </div>
     </main>
