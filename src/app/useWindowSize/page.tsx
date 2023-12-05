@@ -14,7 +14,7 @@ export default function useWindowSizePage() {
       </Link>
       <div>
         <h1 className="text-left text-6xl font-bold">useWindowSize</h1>
-        <p></p>
+        <p>ウィンドウサイズを追跡するフック</p>
       </div>
 
       <hr className="my-4 w-full border-gray-200" />
