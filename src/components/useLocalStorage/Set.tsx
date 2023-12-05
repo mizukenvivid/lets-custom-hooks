@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 type Props = {
@@ -12,7 +14,7 @@ export const Set = ({ set, className }: Props) => {
   });
 
   return (
-    <div className={`rounded-md border-2 border-gray-300 p-4 ${className}`}>
+    <div className={`rounded-md border-2 border-gray-300 p-4 ${className ?? ""}`}>
       <h2 className="text-left text-2xl font-bold">useLocalStorage.set()</h2>
       <p>localStorageにkeyとvalueをセット</p>
       <div className="flex gap-2">

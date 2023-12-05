@@ -1,40 +1,49 @@
 import { useEffect, useState } from "react";
 
-const validateKey = (key: string): void => {
-  if (!key) {
-    throw new Error("Key is required");
-  }
-};
-
-const handleLocalStorageError = (error: unknown, message: string) => {
-  throw new Error(`${message}: ${error instanceof Error ? error.message : String(error)}`);
-};
-
 /**
  * useLocalStorage
- * Provides a custom hook for accessing localStorage.
+ * Provides a custom hook for interacting with localStorage.
  * @example
  * const [list, get, set, remove] = useLocalStorage();
- * list(); // Returns all keys in localStorage
- * get<string>("key1"); // Retrieves value for 'key1'
- * set<string>("key3", "value3"); // Sets 'key3' to 'value3'
- * remove("key1"); // Removes 'key1' from localStorage
- * @returns Array of functions [list, get, set, remove]
+ * list(); // Returns an array of keys
+ * get("key"); // Returns the value for "key"
+ * set("key", "value"); // Sets "key" to "value"
+ * remove("key"); // Removes "key"
+ * @returns Array of [list, get, set, remove]
  */
 export const useLocalStorage = () => {
-  const [, triggerStorageChange] = useState(0);
+  const [, setStorageChange] = useState(0);
 
   useEffect(() => {
-    const handleStorageChange = () => triggerStorageChange((prev) => prev + 1);
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const handleStorageChange = () => setStorageChange((prev) => prev + 1);
     window.addEventListener("storage", handleStorageChange);
+
     return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
+
+  if (typeof window === "undefined") {
+    return [() => [], () => undefined, () => undefined, () => undefined] as const;
+  }
+
+  const validateKey = (key: string) => {
+    if (!key) {
+      throw new Error("Key is required");
+    }
+  };
+
+  const handleLocalStorageError = (error: unknown, message: string) => {
+    throw new Error(`${message}: ${error instanceof Error ? error.message : String(error)}`);
+  };
 
   const list = (): string[] => {
     try {
       return Object.keys(window.localStorage);
     } catch (error) {
-      handleLocalStorageError(error, "Unable to get keys from localStorage");
+      handleLocalStorageError(error, "Unable to list keys");
       return [];
     }
   };
@@ -42,39 +51,31 @@ export const useLocalStorage = () => {
   const get = <T>(key: string): T | undefined => {
     validateKey(key);
     try {
-      const value = window.localStorage.getItem(key);
-      if (value === null) {
-        throw new Error(`Item not found for key: ${key}`);
-      }
-      return JSON.parse(value) as T;
+      const item = window.localStorage.getItem(key);
+      return item ? (JSON.parse(item) as T) : undefined;
     } catch (error) {
-      handleLocalStorageError(error, "Unable to get item from localStorage");
+      handleLocalStorageError(error, "Unable to get item");
       return undefined;
     }
   };
 
-  const set = <T>(key: string, value: T | null): T | undefined => {
+  const set = <T>(key: string, value: T) => {
     validateKey(key);
-    if (value === null) {
-      throw new Error("Value is required");
-    }
     try {
       window.localStorage.setItem(key, JSON.stringify(value));
-      triggerStorageChange((prev) => prev + 1);
-      return value;
+      setStorageChange((prev) => prev + 1);
     } catch (error) {
-      handleLocalStorageError(error, "Unable to set item in localStorage");
-      return undefined;
+      handleLocalStorageError(error, "Unable to set item");
     }
   };
 
-  const remove = (key: string): void => {
+  const remove = (key: string) => {
     validateKey(key);
     try {
       window.localStorage.removeItem(key);
-      triggerStorageChange((prev) => prev + 1);
+      setStorageChange((prev) => prev + 1);
     } catch (error) {
-      handleLocalStorageError(error, "Unable to remove item from localStorage");
+      handleLocalStorageError(error, "Unable to remove item");
     }
   };
 

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 type Props = {
@@ -10,7 +12,7 @@ export const Get = ({ get, className }: Props) => {
   const [value, setValue] = useState("");
 
   return (
-    <div className={`rounded-md border-2 border-gray-300 p-4 ${className}`}>
+    <div className={`rounded-md border-2 border-gray-300 p-4 ${className ?? ""}`}>
       <h2 className="text-left text-2xl font-bold">useLocalStorage.get()</h2>
       <p>特定のkeyを持つlocalStorageの値を取得</p>
       <div className="flex gap-2">

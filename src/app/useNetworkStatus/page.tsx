@@ -6,6 +6,7 @@ import { useNetworkStatus } from "@/hooks/useNetworkStatus";
 
 export default function UseNetworkStatus() {
   const isOnline = useNetworkStatus();
+
   return (
     <main className="p-4">
       <Link className="text-left text-2xl font-bold text-blue-500 hover:text-blue-800" href="/">

@@ -4,10 +4,10 @@ import Link from "next/link";
 
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 
-import { Get } from "./Get";
-import { List } from "./List";
-import { Remove } from "./Remove";
-import { Set } from "./Set";
+import { Get } from "../../components/useLocalStorage/Get";
+import { List } from "../../components/useLocalStorage/List";
+import { Remove } from "../../components/useLocalStorage/Remove";
+import { Set } from "../../components/useLocalStorage/Set";
 
 export default function UseLocalStorage() {
   const [list, get, set, remove] = useLocalStorage();
