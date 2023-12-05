@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { useInterval } from "@/hooks/useInterval";
 
-export default function UseInterval() {
+export default function useIntervalPage() {
   const [logs, setLogs] = useState<string[]>([]);
   const func = () => {
     setLogs((prev) => [...prev, `${prev.length + 1}回目 ${new Date().toLocaleString()}`]);
@@ -24,7 +24,7 @@ export default function UseInterval() {
         {"<< TOPに戻る"}
       </Link>
       <div>
-        <h1 className="text-left text-6xl font-bold">UseInterval</h1>
+        <h1 className="text-left text-6xl font-bold">useInterval</h1>
         <p>特定の処理を指定した間隔で実行するhook</p>
       </div>
 

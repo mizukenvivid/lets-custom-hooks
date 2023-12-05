@@ -5,7 +5,7 @@ import { ChangeEvent, useState } from "react";
 
 import { useDebounce } from "@/hooks/useDebounce";
 
-export default function UseDebounce() {
+export default function useDebouncePage() {
   const [value, setValue] = useState("");
   const [debouncedValue, setDebouncedValue] = useState("");
   const [milliseconds, setMilliseconds] = useState(1000);
@@ -35,7 +35,7 @@ export default function UseDebounce() {
         {"<< TOPに戻る"}
       </Link>
       <div>
-        <h1 className="text-left text-6xl font-bold">UseDebounce</h1>
+        <h1 className="text-left text-6xl font-bold">useDebounce</h1>
         <p>特定の処理を制御するhook</p>
       </div>
 

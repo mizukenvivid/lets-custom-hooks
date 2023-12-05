@@ -6,7 +6,7 @@ import { useClipboard } from "@/hooks/useClipboard";
 
 const copyText = "this text is copied to clipboard";
 
-export default function UseClipboard() {
+export default function useClipboardPage() {
   const [copied, copy] = useClipboard();
 
   return (
@@ -15,7 +15,7 @@ export default function UseClipboard() {
         {"<< TOPに戻る"}
       </Link>
       <div>
-        <h1 className="text-left text-6xl font-bold">UseClipboard</h1>
+        <h1 className="text-left text-6xl font-bold">useClipboard</h1>
         <p>クリップボードにコピーするhook</p>
       </div>
 

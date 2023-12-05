@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { useMousePosition } from "@/hooks/useMousePotision";
 
-export default function UseMousePotision() {
+export default function useMousePositionPage() {
   const potision = useMousePosition();
 
   return (
@@ -13,7 +13,7 @@ export default function UseMousePotision() {
         {"<< TOPに戻る"}
       </Link>
       <div>
-        <h1 className="text-left text-6xl font-bold">UseMousePotision</h1>
+        <h1 className="text-left text-6xl font-bold">useMousePotision</h1>
         <p>マウスの位置を取得するhook</p>
       </div>
 

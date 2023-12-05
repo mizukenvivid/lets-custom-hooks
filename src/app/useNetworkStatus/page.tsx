@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { useNetworkStatus } from "@/hooks/useNetworkStatus";
 
-export default function UseNetworkStatus() {
+export default function useNetworkStatusPage() {
   const isOnline = useNetworkStatus();
 
   return (

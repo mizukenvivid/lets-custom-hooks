@@ -9,7 +9,7 @@ import { List } from "../../components/useLocalStorage/List";
 import { Remove } from "../../components/useLocalStorage/Remove";
 import { Set } from "../../components/useLocalStorage/Set";
 
-export default function UseLocalStorage() {
+export default function useLocalStoragePage() {
   const [list, get, set, remove] = useLocalStorage();
 
   return (
