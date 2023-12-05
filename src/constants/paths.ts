@@ -16,4 +16,16 @@ export const paths = [
     label: "useClipboard: ユーザーのクリップボードにテキストをコピーする",
     path: "/useClipboard",
   },
+  {
+    label: "useMousePosition: マウスの位置を追跡する",
+    path: "/useMousePosition",
+  },
+  {
+    label: "useNetworkStatus: ネットワークの接続状態をチェックする",
+    path: "/useNetworkStatus",
+  },
+  {
+    label: "useWindowSize: ウィンドウのサイズを追跡する",
+    path: "/useWindowSize",
+  },
 ];
