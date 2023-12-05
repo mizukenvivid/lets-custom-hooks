@@ -4,14 +4,16 @@ import { useEffect, useState } from "react";
  * useNetworkStatus
  * Provides a custom hook for tracking the network status.
  * @example
- * const status = useNetworkStatus();
+ * const isOnline = useNetworkStatus();
  * @returns Boolean indicating whether the user is online
  */
 export const useNetworkStatus = () => {
-  const [status, setStatus] = useState(typeof window !== "undefined" ? navigator.onLine : false);
+  const [isOnline, setIsOnline] = useState(
+    typeof window !== "undefined" ? navigator.onLine : false,
+  );
 
   const handleStatusChange = () => {
-    setStatus(navigator.onLine);
+    setIsOnline(navigator.onLine);
   };
 
   useEffect(() => {
@@ -24,5 +26,5 @@ export const useNetworkStatus = () => {
     };
   }, []);
 
-  return status;
+  return isOnline;
 };
