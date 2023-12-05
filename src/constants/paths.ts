@@ -20,12 +20,16 @@ export const paths = [
     path: "/useMousePosition",
   },
   {
-    label: "useNetworkStatus: ネットワークの接続状態をチェックする",
-    path: "/useNetworkStatus",
+    label: "useDeviceOrientation: デバイスの向きを追跡する",
+    path: "/useDeviceOrientation",
   },
   {
     label: "useWindowSize: ウィンドウのサイズを追跡する",
     path: "/useWindowSize",
+  },
+  {
+    label: "useNetworkStatus: ネットワークの接続状態をチェックする",
+    path: "/useNetworkStatus",
   },
   {
     label: "useMovieQuote: ランダムに映画の名言を返す",

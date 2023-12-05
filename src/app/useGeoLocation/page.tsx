@@ -15,7 +15,7 @@ export default function useGeoLocationPage() {
         {"<< TOPに戻る"}
       </Link>
       <div>
-        <h1 className="text-left text-6xl font-bold">useWindowSize</h1>
+        <h1 className="text-left text-6xl font-bold">useGeoLocation</h1>
         <p>ウィンドウサイズを追跡するフック</p>
       </div>
 
