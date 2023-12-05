@@ -16,8 +16,4 @@ export const paths = [
     label: "useClipboard: ユーザーのクリップボードにテキストをコピーする",
     path: "/useClipboard",
   },
-  {
-    label: "useAuth: 認証状態を管理する",
-    path: "/useAuth",
-  },
 ];
