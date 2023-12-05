@@ -1,11 +1,10 @@
 export const paths = [
   {
-    label: "useLocalStorage: ブラウザのローカルストレージにデータを保存し、Reactのstateと同期する",
+    label: "useLocalStorage: ローカルストレージへのアクセスを簡素化する",
     path: "/useLocalStorage",
   },
   {
-    label:
-      "useDebounce: 入力などのアクションに対してディレイを設定し、高頻度で発生するイベントの処理を制御する",
+    label: "useDebounce: 処理に対して遅延を設定し、制御する",
     path: "/useDebounce",
   },
   {
