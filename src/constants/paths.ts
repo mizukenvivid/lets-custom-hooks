@@ -28,4 +28,8 @@ export const paths = [
     label: "useWindowSize: ウィンドウのサイズを追跡する",
     path: "/useWindowSize",
   },
+  {
+    label: "useMovieQuote: ランダムに映画の名言を返す",
+    path: "/useMovieQuote",
+  },
 ];
